@@ -48,8 +48,8 @@ def run() -> None:
 
     from delta.tables import DeltaTable
     taxi_ride_table = DeltaTable.forPath(spark, args.output)
-    taxi_ride_table.update(condition=expr("vendor_id == 2"),
-                           set={"total_amount": "123"})
+    taxi_ride_table.update(condition=expr('vendor_id == 2'),
+                           set={'total_amount': '123'})
     show_records(spark, args.output)
     spark.stop()
 
